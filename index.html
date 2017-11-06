@@ -197,7 +197,7 @@
         -->
             <ul>
             <li>
-              <b>Shashank Gupta</b>, Varun Chandramouli, <a href="https://www.cse.iitb.ac.in/~soumen/">Soumen Chakrabarti</a>, "Web-scale Entity Annotation Using MapReduce." <a href="http://hipc.org/hipc2013/">HiPC 2013</a>. [<a href="papers/Web-scale_Entity_Annotation_Using_MapReduce.pdf">PDF</a>]
+              <b>Shashank Gupta</b>, Varun Chandramouli, <a href="https://www.cse.iitb.ac.in/~soumen/">Soumen Chakrabarti</a>, "Web-scale Entity Annotation Using MapReduce." <a href="http://hipc.org/hipc2013/">HiPC 2013</a>. [<a href="papers/Web-scale_Entity_Annotation_Using_MapReduce.pdf">PDF</a>] [<a href="talks/HadoopAnnot.ppt">Slides</a>]
             </li>
             </ul>
           <!--
@@ -215,9 +215,17 @@
           <h3 style="margin-top: 0em">Projects</h3>
           <hr style="margin-top: 0em; width: 100%; color: black; height: 1px; background-color:black;" />
             <h4 id="dataless">Unsupervised Text Classification </h4>
-          </br>
             <ul>
-                <u><h4 id="one-shot">One-Shot Topic Classification</u> <i><span style="font-weight:normal;margin-left:0.25em;font-size: 15px">(May, 2017 - Present) </span></i></h4>
+              Most existing Text Classification techniques are supervised in nature, and thus require the end-user to provide supervision for every topic/concept of interest. However, getting ample supervision might not always be possible. Moreover, the supervised learning techniques just treat the target label as an ID in their system, and don't really exploit the semantic meaning of the target label. With the advent of large-scale Knowledge-Bases (KBs), it should be possible now to bypass explicit supervision by exploiting the information in KBs, and try
+            </br>
+          </br>
+
+              Towards this goal, we are building up on our previous work on <a href="https://cogcomp.org/page/project_view/6">Dataless Classification</a>, and have experimented with new <a href="https://en.wikipedia.org/wiki/Explicit_semantic_analysis">ESA</a>-style <a href="#entity-emb">entity embeddings</a>. We also <a href="#topic-emb">modified</a> the Word2Vec objective to introduce an explicit notion of topical similarity between words. Realizing the importance of compositionality, we are now in the process of <a href="#one-shot">learning</a> topic-sensitive document embeddings. Our initial <a href="#hier-att">study</a> on existing architectures for text classification demonstrated the importance of using a hierarhical model with hierarchical attention.
+
+          </br>
+          </br>
+
+                <u><h4 id="one-shot">One-Shot Topic Classification</u> <i><span style="font-weight:normal;margin-left:0.25em;font-size: 15px">(May, 2017 - Present)</span></i><span style="margin-left:0.50em;font-size: 15px">[<a href="https://github.com/shatu/doc2Concept">Code</a> ... Coming Soon] </h4>
                 Aim is to use Wikipedia to learn document representations that can enable one-shot learning of topics.
                 <ul>
                   <li>
@@ -236,7 +244,7 @@
 
             </br>
 
-                <u><h4 id="topic-emb">Injecting Topics into Word Embeddings for Unsupervised Classification</u> <i><span style="font-weight:normal;margin-left:0.25em;font-size: 15px">(January – May, 2017)</span></i></h4>
+                <u><h4 id="topic-emb">Injecting Topics into Word Embeddings for Unsupervised Classification</u> <i><span style="font-weight:normal;margin-left:0.25em;font-size: 15px">(January – May, 2017)</span></i><span style="margin-left:0.50em;font-size: 15px">[<a href="https://github.com/shatu/word2Concept">Code</a> ... Coming Soon] </h4>
                 Aim was to somehow inject a notion of topical similarity into the word embeddings
                 <ul>
                   <li>
@@ -251,11 +259,11 @@
                 </ul>
 
             </br>
-              <u><h4 id="hier-att">A Study of Neural Models for Text Classification</u> <i><span style="font-weight:normal;margin-left:0.25em;font-size: 15px">(August – December, 2016)</span></i></h4>
+              <u><h4 id="hier-att">A Study of Neural Models for Text Classification</u> <i><span style="font-weight:normal;margin-left:0.25em;font-size: 15px">(August – December, 2016)</span></i><span style="margin-left:0.50em;font-size: 15px">[<a href="https://github.com/shatu/hier-att">Code</a> ... Coming Soon] </h4>
               Aim was to benchmark several neural models for various document classification tasks (topics, sentiment)
               <ul>
                 <li>
-                  Coded up a hierarchical attention model for document classification.
+                  Coded up the <a href="https://www.cs.cmu.edu/~diyiy/docs/naacl16.pdf">hierarchical attention model</a> for document classification.
                 </li>
                 <li>
                   Carried out an ablation study by removing several components from the model.
@@ -268,13 +276,16 @@
               </br>
 
                 <u><h4 id="entity-emb">Unsupervised Document Classification using Semantic Embeddings</u> <i><span style="font-weight:normal;margin-left:0.25em;font-size: 15px">(August, 2015 – July, 2016)</span></i></h4>
-                Aim was to automatically label a document collection with user-provided topics without any supervision
+                Aim was to automatically label a document collection with user-provided topics without any supervision.
                 <ul>
                   <li>
                     Key idea was to represent Topics and Documents with Semantic Embeddings and use nearest-neighbor for classification.
                   </li>
                   <li>
-                    Created ESA-style sparse Entity Embeddings to represent documents.
+                    Created ESA-style sparse embeddings for Entities.
+                  </li>
+                  <li>
+                    Used composition of Entity and Word embeddings to represent documents.
                   </li>
                   <li>
                     Entity embeddings showed promise in entity similarity tasks.
@@ -286,7 +297,7 @@
 
           <h4 id="textGen">Text Generation</h4>
           <ul>
-              <u><h4 id="gan-vae-text-generation">Conditional Text Generation</u> <i><span style="font-weight:normal;margin-left:0.25em;font-size: 15px">(January – May, 2017)</span></i></h4>
+              <u><h4 id="gan-vae-text-generation">Conditional Text Generation</u> <i><span style="font-weight:normal;margin-left:0.25em;font-size: 15px">(January – May, 2017)</span></i><span style="margin-left:0.50em;font-size: 15px">[<a href="https://github.com/shatu/TextGAN">Code</a> ... Coming Soon] </h4>
               Aim was to try out Deep Generative Models for text generation.
               <ul>
                 <li>
@@ -311,7 +322,7 @@
 
         <h4 id="joint">Joint Learning</h4>
         <ul>
-            <u><h4 id="cs546">Joint NER, RelEx and CoRef using CCMs</u> <i><span style="font-weight:normal;margin-left:0.25em;font-size: 15px">(January – May, 2016)</span></i></h4>
+            <u><h4 id="cs546">Joint NER, RelEx and CoRef using CCMs</u> <i><span style="font-weight:normal;margin-left:0.25em;font-size: 15px">(January – May, 2016)</span></i><span style="margin-left:0.50em;font-size: 15px">[<a href="https://github.com/shatu/Joint-NER-RelEx-Coref">Code</a>] </h4>
             Aim was to develop a joint model for NER, Relation Extraction and Coreference Resolution
             <ul>
               <li>
@@ -492,7 +503,7 @@
 
           <h4 id="misc">Miscellaneous</h4>
           <ul>
-              <u><h4 id="mozilla">Online Comprehensive Examination Software</u> <i><span style="font-weight:normal;margin-left:0.25em;font-size: 15px">(May – July, 2010)</span></i></h4>
+              <u><h4 id="wipro">Online Comprehensive Examination Software</u> <i><span style="font-weight:normal;margin-left:0.25em;font-size: 15px">(May – July, 2010)</span></i></h4>
               Developed a J2EE software for subjective online examinations.
               <ul>
                 <li>
@@ -549,6 +560,12 @@
         <b>Blogs</b>
         <ul>
           <li>
+            OpenAI's <a href="https://blog.openai.com/">blog</a>
+          </li>
+          <li>
+            Karpathy's <a href="http://karpathy.github.io/">blog</a>
+          </li>
+          <li>
             <a href="https://twitter.com/hardmaru">David Ha's</a> awesome <a href="http://blog.otoro.net/">blog</a>.
           </li>
           <li>
@@ -564,10 +581,16 @@
             Denny Britz's <a href="http://www.wildml.com/">blog</a>
           </li>
           <li>
+            Arthur's awesome <a href="https://medium.com/emergent-future/simple-reinforcement-learning-with-tensorflow-part-0-q-learning-with-tables-and-neural-networks-d195264329d0">series</a> on Reinforcement Learning.
+          </li>
+          <li>
             Sebastian's NLP <a href="http://ruder.io/#open">blog</a>
           </li>
           <li>
-            <a href="https://www.umiacs.umd.edu/~hal/">Prof. Hal Daume's</a> NLP <a href="https://nlpers.blogspot.com/">blog</a>
+            Prof. <a href="http://www.cs.princeton.edu/~arora/">Sanjeev Arora's</a> <a href="http://www.offconvex.org/">blog</a>
+          </li>
+          <li>
+            Prof. <a href="https://www.umiacs.umd.edu/~hal/">Hal Daume's</a> NLP <a href="https://nlpers.blogspot.com/">blog</a>
           </li>
         </ul>
         <b>Newsletters</b>
