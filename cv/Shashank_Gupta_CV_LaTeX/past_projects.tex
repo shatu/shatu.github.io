@@ -1,12 +1,10 @@
 \section{\mysidestyle Selected Previous\\Projects}
 \vspace{0mm}
 \textsf{\textbf{Zero-shot Text Classification}} \hfill\textit{\small(Aug'15 - Dec'17)}
-\\ {\textit{Mentor: \href{http://www.cis.upenn.edu/~danroth/}{Prof. Dan Roth}, UIUC}} \hfill{\myhref[darkblue]{https://www.ideals.illinois.edu/bitstream/handle/2142/105826/GUPTA-THESIS-2019.pdf?sequence=1&isAllowed=y}{Technical Report}}
-\vspace{0.05cm}
+\\ {\textit{Mentor: \href{http://www.cis.upenn.edu/~danroth/}{Prof. Dan Roth}; UIUC}} \hfill{\myhref[darkblue]{https://www.ideals.illinois.edu/bitstream/handle/2142/105826/GUPTA-THESIS-2019.pdf?sequence=1&isAllowed=y}{Technical Report}}
 \normalsize
-\vspace{0.05cm}
 \begin{itemize}[leftmargin=*]\compresslist
-\item[] Goal was to do zero-shot text classification of documents into user-specified topics. The key idea was to embed documents \& topic name using some world knowledge, and then computing similarity between the representations for unsupervised text classification. Developed topic-sensitive \href{https://shatu.github.io/\#topic-emb}{word} and \href{https://shatu.github.io/\#entity-emb}{entity} embeddings using Wikipedia by augmenting the Word2Vec loss, and used their composition to create document representations.
+\item[] The goal was to develop a \href{https://www.aaai.org/Papers/AAAI/2008/AAAI08-132.pdf}{zero-shot topic classification} methodology that classifies documents into topics by requiring only a semantic description of the topic. The key idea was to embed documents \& topics using some world knowledge (e.g., Wikipedia) and then compute the similarity between the representations for classification. Developed novel topic-informed dense word and entity representations using Wikipedia by augmenting the word2vec loss to address the limitations of state-of-the-art sparse word representations (explicit-semantic-analysis).
 % \item[] Upon identifying the need to learn the composition itself, modeled it as a One-shot Topic Classification problem using Distant Supervision from Wikipedia.
 % \item[] An empirical study of architectures revealed the importance of hierarchical modeling \& attention.
 % \item Currently using VGG-style networks with skip connections to learn topic-sensitive document embeddings from Wikipedia, where the Wikipedia categories are the labels.
@@ -14,43 +12,42 @@
 
 % \vspace{-0.1cm}
 % \vspace{0mm}  
-% \textsf{\textbf{Conditional Text Generation}} \hfill\textit{\small(Jan - May'17)}
-% \\ {\textit{Guide: \href{http://slazebni.cs.illinois.edu/}{Prof. Svetlana Lazebnik}, UIUC}} \hfill{\myhref[darkblue]{https://shatu.github.io/\#textGen}{Web}}
-% \vspace{0.05cm}
-% \begin{itemize}[leftmargin=*]\compresslist
-% \item[--]Experimented with Conditional GANs and VAEs for sentiment-conditioned review generation. \item[--]Experimented with both Policy-Gradient and Gumbel-Softmax, and used Curriculum Learning with a conditional language model to bootstrap the GANs.
-% \end{itemize}
+\textsf{\textbf{Conditional Text Generation}} \hfill\textit{\small(Jan - May'17)}
+\\ {\textit{Mentor: \href{http://slazebni.cs.illinois.edu/}{Prof. Svetlana Lazebnik}; UIUC}}
+\begin{itemize}[leftmargin=*]\compresslist
+\item[] The goal of this course project was to compare Conditional GANs and VAEs for sentiment-conditioned review generation. Used Policy-Gradient and Gumbel-Softmax with Curriculum Learning to stabilize the GAN training. Human evaluations showed VAEs to be superior for conditional text generation.
+\end{itemize}
 
-\vspace{-0.1cm}    
 \textsf{\textbf{Joint NER, Relation Extraction and CoReference Resolution}} \hfill\textit{\small(Jan - May'16)}
-\\ {\textit{Mentor: \href{http://www.cis.upenn.edu/~danroth/}{Prof. Dan Roth}, UIUC}} \hfill{\myhref[darkblue]{https://shatu.github.io/\#cs546}{Web} $|$ \myhref[darkblue]{https://github.com/shatu/Joint-NER-RelEx-Coref}{Github}}
+\\ {\textit{Mentor: \href{http://www.cis.upenn.edu/~danroth/}{Prof. Dan Roth}; UIUC}} \hfill{\myhref[darkblue]{https://github.com/shatu/Joint-NER-RelEx-Coref}{Github}}
 \normalsize
 \begin{itemize}[leftmargin=*]\compresslist
-\item[] Aim was to jointly model NER, Relation Extraction and CoRef using explicit constraints. Simple coupling of classifiers without constraints showed poor performance. Developed a framework for joint training with \href{https://en.wikipedia.org/wiki/Constrained_conditional_model}{Constrained-Conditional Models}, using \href{https://github.com/CogComp/illinois-sl}{Illinois-SL} and \href{https://github.com/CogComp/cogcomp-nlp}{CogComp-NLP}. 
-\end{itemize}
-\textsf{\textbf{Agile NERD for KB-Lifecycle}}\hfill\textit{\small(Aug'14 - April'15)}
-\\ {\textit{Mentor: \href{https://people.mpi-inf.mpg.de/~weikum/}{Prof. Gerhard Weikum}, \href{https://sites.ualberta.ca/~denilson/}{Prof. Denilson Barbosa}, MPI}} \hfill{\myhref[darkblue]{https://shatu.github.io/\#mpi}{Web}}
-\begin{itemize}[leftmargin=*]\compresslist
-\item[] Identified the problem of separating mentions of emerging entities from mentions worthy of abstention as the key hurdle in achieving real-time KBs and iterative entity annotation on corpus. Used the disagreement between an ensemble of annotators to signal abstention on a given mention.
-\end{itemize}
-
-\textsf{\textbf{Scalable Entity Disambiguation and Search}}\hfill\textit{\small(Jan'13 - June'14)}
-\\ {\textit{Mentor: \href{https://www.cse.iitb.ac.in/~soumen/}{Prof. Soumen Chakrabarti}, IIT-Bombay}}\hfill{\myhref[darkblue]{https://shatu.github.io/\#iitb}{Web} $|$ \myhref[darkblue]{https://shatu.github.io/papers/Web-scale_Entity_Annotation_Using_MapReduce.pdf}{Publication} $|$ \myhref[darkblue]{https://www.cse.iitb.ac.in/~soumen/doc/CSAW/}{CSAW}}
-\begin{itemize}[leftmargin=*]\compresslist
-    \item[] (See Publication \#1)\vspace{-1mm}
-    \item[] Designed a scalable entity disambiguation and indexing framework by developing custom-key partitioning strategies to mitigate the load-skew problem of a simple MapReduce implementation. Further improved the accuracy of the entity disambiguation system by extracting more training data from Wikipedia and engineering features. %Developed MapReduce-based solutions for distributed training of millions of models. 
+\item[] The goal of this course project was to jointly model NER, Relation Extraction, and Coreference Resolution. Found simple coupling of classifiers without constraints to show poor performance. Developed a framework for joint training with constraints using \href{https://en.wikipedia.org/wiki/Constrained_conditional_model}{Constrained-Conditional Models}.
 \end{itemize}
 
 \newpage
+\textsf{\textbf{Agile NERD for KB-Lifecycle}}\hfill\textit{\small(Aug'14 - April'15)}
+\\ {\textit{Mentors: \href{https://people.mpi-inf.mpg.de/~weikum/}{Prof. Gerhard Weikum}, and \href{https://sites.ualberta.ca/~denilson/}{Prof. Denilson Barbosa}; MPI}}
+\begin{itemize}[leftmargin=*]\compresslist
+\item[] Identified the problem of separating mentions of emerging entities from mentions worthy of abstention as one of the main challenges in developing automated methods for achieving real-time KBs. Used disagreement between an ensemble of classifiers to signal abstention on a given mention. Preliminary experiments showed promise in identifying mentions worthy of abstention.
+\end{itemize}
+
+\textsf{\textbf{Scalable Entity Disambiguation and Search}}\hfill\textit{\small(Jan'13 - June'14)}
+\\ {\textit{Mentor: \href{https://www.cse.iitb.ac.in/~soumen/}{Prof. Soumen Chakrabarti}, IIT-Bombay}}\hfill{\myhref[darkblue]{https://www.cse.iitb.ac.in/~soumen/doc/CSAW/}{Web}}
+\begin{itemize}[leftmargin=*]\compresslist
+    \item[] (See Publication \#1)\vspace{-1mm}
+    \item[] Designed a scalable entity disambiguation and indexing system by developing custom-key partitioning strategies to mitigate the load-skew problem of a simple MapReduce implementation. %Distributed the training of millions of entity disambiguation models using MapReduce. %Further improved the accuracy of the entity disambiguation system by extracting more training data from Wikipedia and engineering features. %
+\end{itemize}
+
 \textsf{\textbf{User Response Prediction for Non-Guaranteed Display Ad Delivery}}\hfill\textit{\small(June - Dec'12)}
-\\ {\textit{Mentor: \href{http://www.pmg.it.usyd.edu.au/}{Prof. Sanjay Chawla}, \href{https://www.cse.iitb.ac.in/~shivaram/}{Prof. Shivaram Kalyanakrishnan}, Yahoo Labs}} \hfill{\myhref[darkblue]{https://shatu.github.io/\#labs}{Web}}
+\\ {\textit{Mentor: \href{http://www.pmg.it.usyd.edu.au/}{Prof. Sanjay Chawla}, \href{https://www.cse.iitb.ac.in/~shivaram/}{Prof. Shivaram Kalyanakrishnan}, Yahoo Labs}}
 \normalsize
 \begin{itemize}[leftmargin=*]\compresslist
     \item[] Improved the accuracy of the user-click prediction model by mining new features. Analyzed Petabytes of data for feature signal \& coverage. Used that analysis to find a training data partitioning strategy that showed promise when different models were trained on those different partitions.
 \end{itemize}
 
 \textsf{\textbf{Automated Campaign Optimization for Search Advertising}}\hfill\textit{\small(Jan - June'12)}
-\\ {\textit{Guide: Ajay Sharma, Director, UDA, Yahoo R\&D}} \hfill{\myhref[darkblue]{https://shatu.github.io/\#uda}{Web}}
+\\ {\textit{Guide: Ajay Sharma, Director, UDA, Yahoo R\&D}}
 \normalsize
 \begin{itemize}[leftmargin=*]\compresslist
     \item[] Protoyped a tool that automated the account optimization for advertisers. Developed models for predicting \#impressions, \#clicks, \#conversions, and handled sparsity issues by using community detection algorithms to cluster competitors together. Ultimately, given a budget, the tool used resource allocation algorithms to select appropriate bid amounts for various targeting combinations.
