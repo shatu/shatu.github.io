@@ -66,6 +66,51 @@
         100% { text-shadow: 0 0 4px #f6e07f, 0 0 8px #f6e07f; }
       }
     </style>
+    <style>
+      .intern-callout {
+        margin: 20px 0;
+        text-align: center;
+        font-weight: 500;
+        font-size: 0.95em;
+        line-height: 1.45;
+      }
+
+      .intern-callout .spark {
+        animation: sparkPulse 2.2s ease-in-out infinite;
+        margin-right: 6px;
+        font-size: 1.1em;
+      }
+
+      @keyframes sparkPulse {
+        0%   { text-shadow: 0 0 4px #f6e07f; }
+        50%  { text-shadow: 0 0 10px #ffd74a; }
+        100% { text-shadow: 0 0 4px #f6e07f; }
+      }
+    </style>
+    <style>
+      .intern-highlight {
+        background: #fff8d6;
+        border-left: 4px solid #f1ce4e;
+        padding: 12px 18px;
+        margin: 24px 0;
+        font-size: 0.95em;
+        border-radius: 6px;
+        text-align: center;
+        line-height: 1.5;
+      }
+
+      .intern-highlight .spark {
+        animation: sparkPulse 2.2s ease-in-out infinite;
+        margin-right: 6px;
+        font-size: 1.1em;
+      }
+
+      @keyframes sparkPulse {
+        0%   { text-shadow: 0 0 4px #f6e07f; }
+        50%  { text-shadow: 0 0 10px #ffd74a; }
+        100% { text-shadow: 0 0 4px #f6e07f; }
+      }
+    </style>
     <link rel="shortcut icon" type="image/png" href="./images1/ShashankGupta.jpeg" />
     <script type="text/javascript" src="js/hidebib.js"></script>
     <title>Shashank Gupta</title>
@@ -90,16 +135,16 @@
               <p>
                 I'm a researcher at the <a href="https://allenai.org/"><strong>Allen Institute for AI (Ai2)</strong></a> in Seattle.
               </p>
-              <p>
+              <!-- <p>
                 Broadly, I am interested in building general-purpose AI agents that can: <br>
                 (1) reason about complex problems through natural language rationalization, <br>
                 (2) faithfully express their uncertainty in their knowledge and reasoning, and <br>
                 (3) continuously improve through self-reflection and human feedback.
-              </p>
+              </p> -->
               <p>
-                My current research focus is on AI for Scientific Discovery. I am particularly interested in AI for Math (e.g., Automated Theorem Proving, better foundation models for Math), 
-                building agents for finding supporting/contrary evidence from literature, and retrieval-augmented and memory architectures for supporting these use cases.
+                My current research centers on developing agentic large language models&mdash;systems that can plan, reason, use tools and APIs, write code, and interact with complex environments to accomplish real tasks. I study how training data, objectives, and learning environments shape the emergence of robust and generalizable agentic behavior, and how such capabilities can be measured and controlled in reliable ways.
               </p>
+
               <p align="center">
                 <a href="./data/ShashankGupta-CV.pdf">CV</a> | 
                 <a href=mailto:shashank.nlp@gmail.com>E-Mail</a> | 
@@ -107,6 +152,12 @@
                 <a href="https://www.semanticscholar.org/author/Shashank-Gupta/2152953535">Semantic Scholar</a> | 
                 <a href="https://github.com/shatu">Github</a> | <a href="https://twitter.com/shashank_bits"> Twitter</a>
               </p>
+
+              <div class="intern-highlight">
+                <!-- <span class="spark">&#x2728;&#x2728;</span> -->
+                If you're excited about advancing open agentic LLMs that can reason, plan, and use tools,
+                we're currently hiring interns&#8212;apply <a href="https://job-boards.greenhouse.io/thealleninstitute/jobs/7366263">here</a> or reach out to me directly!
+              </div>
             </td>
             <td width="100%" valign="top">
               <a href="./images1/ShashankGupta.jpeg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="./images1/ShashankGupta.jpeg" class="hoverZoomLink"></a>
