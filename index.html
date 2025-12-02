@@ -49,6 +49,23 @@
         font-weight: 600
       }
     </style>
+    <style>
+      .glow-badge {
+        color: black;
+        font-size: 0.90em;        /* Slightly smaller to match superscript feel */
+        font-weight: 500;         /* Match body text more closely */
+        letter-spacing: 0.5px;    /* Adds spacing to counter glow thickness */
+        vertical-align: baseline; /* Keeps alignment consistent with text line */
+        margin-left: 2px;         /* Moves the text away from the * */
+        animation: glowPulse 2s ease-in-out infinite;
+      }
+
+      @keyframes glowPulse {
+        0%   { text-shadow: 0 0 4px #f6e07f, 0 0 8px #f6e07f; }
+        50%  { text-shadow: 0 0 10px #ffe98a, 0 0 18px #ffd74a; }
+        100% { text-shadow: 0 0 4px #f6e07f, 0 0 8px #f6e07f; }
+      }
+    </style>
     <link rel="shortcut icon" type="image/png" href="./images1/ShashankGupta.jpeg" />
     <script type="text/javascript" src="js/hidebib.js"></script>
     <title>Shashank Gupta</title>
@@ -71,7 +88,7 @@
           <tr>
             <td width="70%" valign="middle">
               <p>
-                I'm a researcher on the <strong>Aristo</strong> team at the <a href="https://allenai.org/">Allen Institute for AI (AI2)</a> in Seattle.
+                I'm a researcher at the <a href="https://allenai.org/"><strong>Allen Institute for AI (Ai2)</strong></a> in Seattle.
               </p>
               <p>
                 Broadly, I am interested in building general-purpose AI agents that can: <br>
@@ -370,6 +387,89 @@
         </table>
 
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <!-- OLMo3 -->
+          <tr onmouseover="olmo_start()" onmouseout="olmo_stop()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one" style="position:relative; width:100%;">
+
+                <!-- Overlay video (hidden by default, shown on hover) -->
+                <div class="two" id="olmo_image"
+                    style="
+                      position:absolute;
+                      top:0;
+                      left:0;
+                      width:100%;
+                      height:100%;
+                      opacity:0;
+                      transition: opacity 0.3s ease;
+                    ">
+                  <video id="olmo_video" width="100%" muted autoplay loop playsinline style="display:block;">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+
+                <!-- Static image always underneath -->
+                <img src="images1/project_overviews/olmo3_vid.png" width="100%" style="display:block;">
+              </div>
+
+              <!-- HLS + hover logic -->
+              <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+              <script>
+                // --- Set up HLS video from Mux ---
+                const video = document.getElementById('olmo_video');
+                const hlsSource = 'https://stream.mux.com/952wZavkYIt9UzG1zEul5u5GC01f65sUm.m3u8?redundant_streams=true';
+
+                if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                  // Safari has native HLS
+                  video.src = hlsSource;
+                } else if (window.Hls && Hls.isSupported()) {
+                  const hls = new Hls();
+                  hls.loadSource(hlsSource);
+                  hls.attachMedia(video);
+                } else {
+                  // Fallback: if nothing else, just set src (may or may not work depending on browser)
+                  video.src = hlsSource;
+                }
+
+                // --- Hover behavior ---
+                function olmo_start() {
+                  document.getElementById('olmo_image').style.opacity = '1';
+                }
+
+                function olmo_stop() {
+                  document.getElementById('olmo_image').style.opacity = '0';
+                }
+
+                // Start with video hidden, but already playing underneath
+                olmo_stop();
+              </script>
+            </td>
+
+            <td valign="top" width="65%">
+              <p>
+                <a href="https://allenai.org/blog/olmo3">
+                  <img src="./images1/new.png" alt="[NEW]" width="5%" style="border-style:none;">
+                  <heading>OLMo 3</heading>
+                </a>
+                <br>
+                Olmo Team&ast;, Allyson Ettinger, Amanda Bertsch, [...], <strong><u>Shashank&nbsp;Gupta</u></strong>, [...], Noah A. Smith, Hannaneh Hajishirzi
+                <br>
+                <span class="glow-badge">&ast; Core Contributor</span>
+              </p>
+
+              <p>
+                <!-- <span style="color:black;">&#x2728; Core Contributor &#x2728;</span><br> -->
+                <a href="https://allenai.org/papers/olmo3">paper</a> |
+                <a href="https://platform-docs-beta-olmo3.apps.allenai.org/models/olmo3">code</a> |
+                <a href="https://huggingface.co/collections/allenai/olmo-3">data & models</a> |
+                <!-- <a href="https://huggingface.co/collections/allenai/olmo-3-pre-training">pre-training data</a> |
+                <a href="https://huggingface.co/collections/allenai/olmo-3-post-training">post-training data</a> | -->
+                <a href="https://allenai.org/blog/olmo3">blog</a> |
+                <a href="https://x.com/allen_ai/status/1991507983881379896">X (Twitter)</a>
+              </p>
+            </td>
+          </tr>
+
           <!-- LLM-SR -->
           <tr>
             <td width="35%">
@@ -380,20 +480,19 @@
             </td>
             <td valign="top" width="65%">
               <p>
-                <a href="https://arxiv.org/abs/2404.18400">
-                  <img src="./images1/new.png" alt="[NEW]" width="5%" style="border-style: none">
+                <a href="https://openreview.net/forum?id=m2nmp8P5in">
                   <heading>LLM-SR: Scientific Equation Discovery via Programming with Large Language Models</heading>
                 </a>
                 <br>
                 Parshin Shojaee, Kazem Meidani, <strong><u>Shashank&nbsp;Gupta</u></strong>, Amir Barati Farimani, Chandan K Reddy
                 <!-- <br> -->
-                <p>
-                  <strong>&#x2728; To appear at ICLR'25 (Oral) &#x2728;</strong>
-                  <br>
-                  <a href="https://arxiv.org/abs/2404.18400">paper</a> | 
-                  <a href="https://github.com/deep-symbolic-mathematics/llm-sr">code</a> | 
-                  <a href="https://x.com/ParshinShojaee/status/1791135155790196828">X (Twitter)</a>
-                </p>
+              <p>
+                <strong>ICLR 2025 (Oral)</strong>
+                <br>
+                <a href="https://openreview.net/forum?id=m2nmp8P5in">paper</a> | 
+                <a href="https://github.com/deep-symbolic-mathematics/llm-sr">code</a> | 
+                <a href="https://x.com/ParshinShojaee/status/1791135155790196828">X (Twitter)</a>
+              </p>
             </td>
           </tr>
 
@@ -413,16 +512,16 @@
                 <br>
                 Ben Bogin, Kejuan Yang, <strong><u>Shashank&nbsp;Gupta</u></strong>, Kyle Richardson, Erin Bransom, Peter Clark, Ashish Sabharwal, Tushar Khot
                 <!-- <br> -->
-                <p>
-                  <strong>EMNLP 2024</strong>
-                  <br>
-                    <span style="color: red;">&#x1F3C6; Outstanding Paper Award &#x1F3C6;</span>
-                  <br>
-                  <a href="https://arxiv.org/abs/2409.07440">paper</a> | 
-                  <a href="https://github.com/allenai/super-benchmark">code</a> | 
-                  <a href="https://huggingface.co/datasets/allenai/super">dataset</a> | 
-                  <a href="https://x.com/ben_bogin/status/1835744611836534850">X (Twitter)</a>
-                </p>
+              <p>
+                <strong>EMNLP 2024</strong>
+                <br>
+                  <span style="color: red;">&#x1F3C6; Outstanding Paper Award &#x1F3C6;</span>
+                <br>
+                <a href="https://arxiv.org/abs/2409.07440">paper</a> | 
+                <a href="https://github.com/allenai/super-benchmark">code</a> | 
+                <a href="https://huggingface.co/datasets/allenai/super">dataset</a> | 
+                <a href="https://x.com/ben_bogin/status/1835744611836534850">X (Twitter)</a>
+              </p>
             </td>
           </tr>
 
